@@ -1,0 +1,74 @@
+﻿@page
+@model ControleDeEstoque.Pages.Produtos.CreateModel
+@{
+}
+
+<h1 class="text-center">Adicionar novo produto</h1>
+
+<hr />
+
+<form method="post">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="nome" class="control-label">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" />
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="modelo" class="control-label">Modelo</label>
+                <input type="text" class="form-control" id="modelo" name="modelo" />
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="quantidade" class="control-label">Quantidade</label>
+                <input type="number" class="form-control" id="quantidade" name="quantidade" />
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="tamanho" class="control-label">Tamanho</label>
+                <input type="text" class="form-control" id="tamanho" name="tamanho" />
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="descricao" class="control-label">Descrição</label>
+                <input type="text" class="form-control" id="descricao" name="descricao" />
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="preco" class="control-label">Preço</label>
+                <input type="number" class="form-control" id="preco" name="preco" />
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="imagem" class="control-label">Imagem</label>
+                <input type="text" class="form-control" id="imagem" name="imagem" />
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="Categoria.ID" class="control-label">Categoria</label>
+                <input type="number" class="form-control" id="Categoria.ID" name="Categoria.ID" />
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="submit" value="Adicionar Produto" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>

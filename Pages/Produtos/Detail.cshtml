@@ -1,0 +1,56 @@
+﻿@page
+@model ControleDeEstoque.Pages.Produtos.DetailModel
+@{
+}
+
+<h1>Gerenciador de Estoque</h1>
+
+   <section >
+      <div bg-light">
+        <div class="container">
+<div class="row">
+    <hr />
+    <div class="card-body">
+                            <form class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="primeiroNome">Nome:</label>
+                                        <h6>@Html.DisplayFor(model => Model.Produto.nome)</h6>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="sobrenome">ID:</label>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <label for="primeiroNome">Tam:</label>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="sobrenome">R$:</label>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="email">Categoria:</label>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="email">Descrição:</label>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="align-items-center">
+                                <div>
+                                    <button type="button" class="w-100 btn btn-lg btn-primary">Destaque</button>
+                                </div>
+                            </div>
+                        </div>
+
+</div>
+</div>
+</div>
+</section>
+<div class="row">
+    <a class="btn btn-outline-primary"
+       asp-page="/Produtos/Edit"
+       asp-route-id="@Model.Produto.ID">Atualizar</a>
+    <a class="btn btn-outline-danger"
+       asp-page="/Produtos/Delete"
+       asp-route-id="@Model.Produto.ID">Deletar</a>
+</div>
