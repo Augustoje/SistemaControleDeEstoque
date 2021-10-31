@@ -3,75 +3,72 @@
 @{
 }
 
-<div class="container col-8">
-    <h4 class="page-header">Cadastro Novo Produto</h4>
+<h1 class="text-center">Adicionar novo produto</h1>
 
+<hr />
 
-    <div class="card shadow h-100 py-2">
-        <div class="card-body">
+<form method="post">
+    <div class="row">
 
-            <form method="Post">
-                <div class="row my-2">
-                    <div class="col">
-                        <label for="Nome">Nome*</label>
-                        <input type="text" class="form-control" id="nome" name="nome" required />
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="nomeCategoria" class="control-label">Nome</label>
+                <input type="text" class="form-control" id="nomeCategoria" name="nomeCategoria" />
+            </div>
+        </div>
 
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <label for=" modelo">Modelo*</label>
-                        <input type="text" class="form-control" id="modelo" name="modelo" required />
-                    </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="modelo" class="control-label">Modelo</label>
+                <input type="text" class="form-control" id="modelo" name="modelo" />
+            </div>
+        </div>
 
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="quantidade" class="control-label">Quantidade</label>
+                <input type="number" class="form-control" id="quantidade" name="quantidade" />
+            </div>
+        </div>
 
-                    <div class="col">
-                        <label for="quantidade">Quantidade*</label>
-                        <input type="number" class="form-control" id="quantidade" name="quantidade" required />
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="tamanho" class="control-label">Tamanho</label>
+                <input type="text" class="form-control" id="tamanho" name="tamanho" />
+            </div>
+        </div>
 
-                    </div>
-                </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="descricao" class="control-label">Descrição</label>
+                <input type="text" class="form-control" id="descricao" name="descricao" />
+            </div>
+        </div>
 
-                <div class="row">
-                    <div class="col">
-                        <label for=" categoria">Categoria*</label>
-                        <input type="number" class="form-control" id="categoria" name="Categoria.ID" required/>
-                    </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="preco" class="control-label">Preço</label>
+                <input type="number" class="form-control" id="preco" name="preco" />
+            </div>
+        </div>
 
-                    <div class="col">
-                        <label for="tamanho">Tamanho*</label>
-                        <input type="text" class="form-control" id="tamanho" name="tamanho" required/>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="imagem" class="control-label">Imagem</label>
+                <input type="text" class="form-control" id="imagem" name="imagem" />
+            </div>
+        </div>
 
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <label for="preco" >Preço de venda*</label>
-                        <input type="text" class="form-control" id="preco" name="preco" required/>
-                    </div>
-
-
-                    <div class="col">
-                        <label for="imagem">Imagem*</label>
-                        <input type="text" class="form-control" id="imagem" name="imagem" required/>
-
-                    </div>
-                </div>
-
-                <div class="row my-2">
-                    <div class="col">
-                        <label for="descricao">Descrição*</label>
-                        <textarea class="form-control" id="mensagem" name="descricao" col="8" rows="4" required></textarea>
-
-                    </div>
-                </div>
-                <div class="d-flex flex-row-reverse">
-                    <button type="submit" class="btn btn-info">Cadastrar</button>
-                </div>
-            </form>
-
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="Categoria.ID" class="control-label">Categoria</label>
+                <input type="number" class="form-control" id="Categoria.ID" name="Categoria.ID" />
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="submit" value="Adicionar Produto" class="btn btn-primary" />
+            </div>
         </div>
     </div>
-
-</div>
+</form>

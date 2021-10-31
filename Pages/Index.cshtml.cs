@@ -16,8 +16,13 @@ namespace ControleDeEstoque.Pages
     public class IndexModel : PageModel
     {
         public List<Produto> Produtos { get; private set; }
-        public List<Venda> ProdutoMaisVendido { get; private set; }
+        public List<Produto> MaisVenda { get; private set; }
+        public List<Venda> UltimaSaida { get; private set; }
+
+        public List<Venda> UltimasAtulizacoes { get; private set; }
+        
         public int Estoque { get; private set; }
+
         string baseUrl = "https://localhost:44338";
         public async Task OnGetAsync()
         {
@@ -28,7 +33,7 @@ namespace ControleDeEstoque.Pages
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = await client.GetAsync("api/Produto");
+                HttpResponseMessage response = await client.GetAsync("/api/Produto");
                 if (response.IsSuccessStatusCode)
                 {
                     string result = response.Content.ReadAsStringAsync().Result;
@@ -36,28 +41,13 @@ namespace ControleDeEstoque.Pages
                 }
 
                 await GetEstoque();
-               await  GetMaisVendido();
+                await GetMaisVendido();
+                await GetUltimaSaida();
+                await GetUltimasAtulizacoes();
             }
         }
+
         public async Task GetEstoque()
-        {
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(baseUrl);
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(
-                    new MediaTypeWithQualityHeaderValue("application/json"));
-
-                HttpResponseMessage response = await client.GetAsync("api/Produto/Quantidade-Estoque");
-                if (response.IsSuccessStatusCode)
-                {
-                    string resultEstoque = response.Content.ReadAsStringAsync().Result;
-                    Estoque = JsonConvert.DeserializeObject<int>(resultEstoque);
-                }
-            }
-        }
-
-        public async Task GetUltimaSaida()
         {
             using (var client = new HttpClient())
             {
@@ -77,18 +67,56 @@ namespace ControleDeEstoque.Pages
 
         public async Task GetMaisVendido()
         {
-            using (var client = new HttpClient())
-            {
+            using (var client = new HttpClient()) { 
+
                 client.BaseAddress = new Uri(baseUrl);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(
-                    new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = await client.GetAsync("api/Venda/Mais-Vendido");
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client.GetAsync("api/Venda/Melhor-Venda");
                 if (response.IsSuccessStatusCode)
                 {
-                    string resultMaisVendido = response.Content.ReadAsStringAsync().Result;
-                    ProdutoMaisVendido = JsonConvert.DeserializeObject<List<Venda>>(resultMaisVendido);
+                    string result = response.Content.ReadAsStringAsync().Result;
+                    MaisVenda = JsonConvert.DeserializeObject<List<Produto>>(result);
+                }
+             }
+        }
+
+        public async Task GetUltimaSaida()
+        {
+            using (var client = new HttpClient())
+            {
+
+                client.BaseAddress = new Uri(baseUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(
+
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client.GetAsync("api/Venda/Ultima-Saida");
+                if (response.IsSuccessStatusCode)
+                {
+                    string result = response.Content.ReadAsStringAsync().Result;
+                    UltimaSaida = JsonConvert.DeserializeObject<List<Venda>>(result);
+                }
+            }
+        }
+
+        public async Task GetUltimasAtulizacoes()
+        {
+            using (var client = new HttpClient())
+            {
+
+                client.BaseAddress = new Uri(baseUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(
+
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client.GetAsync("api/Venda");
+                if (response.IsSuccessStatusCode)
+                {
+                    string result = response.Content.ReadAsStringAsync().Result;
+                    UltimasAtulizacoes = JsonConvert.DeserializeObject<List<Venda>>(result);
                 }
             }
         }
