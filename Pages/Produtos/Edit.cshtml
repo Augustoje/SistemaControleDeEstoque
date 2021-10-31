@@ -15,19 +15,19 @@
                 <div class="row my-2">
                     <div class="col">
                         <label asp-for="Produto.nome">Nome*</label>
-                        <input asp-for="Produto.nome" class="form-control" required />
+                        <input placeholder="Descrição do produto" asp-for="Produto.nome" class="form-control" required />
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col">
                         <label asp-for="Produto.modelo">Modelo*</label>
-                        <input asp-for="Produto.modelo" class="form-control" required />
+                        <input placeholder="Modelo do produto" asp-for="Produto.modelo" class="form-control" required />
                     </div>
 
                     <div class="col">
                         <label asp-for="Produto.quantidade">Quantidade*</label>
-                        <input asp-for="Produto.quantidade" class="form-control" required />
+                        <input placeholder="Quantidade do produto" asp-for="Produto.quantidade" class="form-control" required />
 
                     </div>
                 </div>
@@ -35,30 +35,30 @@
                 <div class="row">
                     <div class="col">
                         <label asp-for="Produto.Categoria.ID">Categoria*</label>
-                        <input asp-for="Produto.Categoria.ID" class="form-control" required />
+                        <input placeholder="Categoria do produto" asp-for="Produto.Categoria.ID" class="form-control" required />
                     </div>
 
                     <div class="col">
                         <label asp-for="Produto.tamanho">Tamanho*</label>
-                        <input asp-for="Produto.tamanho" class="form-control" required />
+                        <input placeholder="Tamanho do produto" asp-for="Produto.tamanho" class="form-control" required />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <label asp-for="Produto.preco">Preço de Venda*</label>
-                        <input asp-for="Produto.preco" class="form-control" required />
+                        <input placeholder="Preço unitário do produto" asp-for="Produto.preco" class="form-control" required />
                     </div>
 
                     <div class="col">
                         <label asp-for="Produto.imagem">Imagem*</label>
-                        <input asp-for="Produto.imagem" class="form-control" required />
+                        <input placeholder="Imagem do produto" asp-for="Produto.imagem" class="form-control" required />
                     </div>
                 </div>
 
                 <div class="row my-2">
                     <div class="col">
                         <label asp-for="Produto.descricao">Descrição*</label>
-                        <textarea asp-for="Produto.descricao" class="form-control" col="8" rows="4" required></textarea>
+                        <textarea placeholder="Descrição do produto" asp-for="Produto.descricao" class="form-control" col="8" rows="4" required></textarea>
 
                     </div>
 
