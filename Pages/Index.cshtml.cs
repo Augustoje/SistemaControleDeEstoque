@@ -74,6 +74,7 @@ namespace ControleDeEstoque.Pages
 
                     new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = await client.GetAsync("api/Venda/Melhor-Venda");
+
                 if (response.IsSuccessStatusCode)
                 {
                     string result = response.Content.ReadAsStringAsync().Result;

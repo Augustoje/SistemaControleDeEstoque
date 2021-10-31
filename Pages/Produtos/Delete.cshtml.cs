@@ -1,4 +1,4 @@
-using System;
+Ôªøusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,7 +15,7 @@ namespace ControleDeEstoque.Pages.Produtos
     {
         [BindProperty]
         public Produto Produto { get; set; }
-        string baseUrl = "https://localhost:44388";
+        string baseUrl = "https://localhost:44338";
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if(id == null)
@@ -29,7 +29,7 @@ namespace ControleDeEstoque.Pages.Produtos
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
-                //Fazendo mÈtodo GET https://localhost:44388/api/Produtos/{id}
+                //Fazendo m√©todo GET
                 HttpResponseMessage response = await client.GetAsync("api/Produto/" + id);
 
                 //Booleano que nos diz se deu certo ou se teve algum erro
@@ -63,11 +63,10 @@ namespace ControleDeEstoque.Pages.Produtos
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = await client
-                    .DeleteAsync("api/Produtos/" + Produto.ID);
+                HttpResponseMessage response = await client.DeleteAsync("api/Produto/" + Produto.ID);
                 if(response.IsSuccessStatusCode)
                 {
-                    //Sucesso! Quero ir para a minha p·gina http://localhost:port/Produtos
+                    //Sucesso! Quero ir para a minha p√°gina http://localhost:port/Produtos
                     return RedirectToPage("./Index");
                 } else {
                     return Page();

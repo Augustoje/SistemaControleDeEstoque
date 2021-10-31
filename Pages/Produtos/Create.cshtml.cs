@@ -16,6 +16,7 @@ namespace ControleDeEstoque.Pages.Produtos
         [BindProperty]
         public Produto Produto { get; set; }
 
+
         string baseUrl = "https://localhost:44338";
         public async Task<IActionResult> OnPostAsync()
         {

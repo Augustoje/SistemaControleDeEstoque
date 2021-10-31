@@ -15,7 +15,7 @@ namespace ControleDeEstoque.Pages.Produtos
 {
     public class IndexModel : PageModel
     {
-        public List<Produto> Produtos { get; private set; }
+        public List<Produto> Produtos { get; set; }
         string baseUrl = "https://localhost:44338";
         public async Task OnGetAsync()
         {
