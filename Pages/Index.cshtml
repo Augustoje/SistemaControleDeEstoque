@@ -90,17 +90,19 @@
                             <th scope="col">Código</th>
                             <th scope="col">Produto</th>
                             <th scope="col">Tamanho</th>
-                            <th scope="col">Categoria</th>
+                            <th scope="col">Modelo</th>
+                            <th scope="col">Data de Venda</th>
                         </tr>
                     </thead>
-                    @foreach (var data in Model.Produtos)
+                    @foreach (var data in Model.UltimasAtulizacoes)
                     {
                         <tbody>
                             <tr>
                                 <td> @Html.DisplayFor(modelItem => data.ID)</td>
-                                <td> @Html.DisplayFor(modelItem => data.nome)</td>
-                                <td> @Html.DisplayFor(modelItem => data.tamanho)</td>
-                                <td> @Html.DisplayFor(modelItem => data.Categoria.nomeCategoria)</td>
+                                <td> @Html.DisplayFor(modelItem => data.Produto.nome)</td>
+                                <td> @Html.DisplayFor(modelItem => data.Produto.tamanho)</td>
+                                <td> @Html.DisplayFor(modelItem => data.Produto.modelo)</td>
+                                <td> @Html.DisplayFor(modelItem => data.data)</td>
                             </tr>
                         </tbody>
                     }
@@ -120,7 +122,7 @@
                     <thead class="table table-borderless">
                         <tr>
                             <th scope="col">Produto</th>
-                            <th scope="col">ID produto</th>
+                            <th scope="col">Vendidos</th>
                         </tr>
                     </thead>
 
@@ -129,7 +131,7 @@
                         <tbody>
                              <tr>
                                 <td> @Html.DisplayFor(modelItem => data.Produto.nome)</td>
-                                <td> @Html.DisplayFor(modelItem => data.Produto.ID)</td>
+                                <td> @Html.DisplayFor(modelItem => data.quantidade)</td>
                              </tr>
 
                         </tbody>
