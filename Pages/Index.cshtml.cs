@@ -35,8 +35,8 @@ namespace ControleDeEstoque.Pages
                     Produtos = JsonConvert.DeserializeObject<List<Produto>>(result);
                 }
 
-                await GetEstoque();
-                await GetMaisVendido();
+                GetEstoque();
+                GetMaisVendido();
             }
         }
         public async Task GetEstoque()
