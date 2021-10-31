@@ -3,64 +3,72 @@
 @{
 }
 
-<h1 class="text-center">Editar Produto</h1>
-<hr />
-
-<form method="post">
-    <div class="row">
-        <input type="hidden" asp-for="Produto.ID" />
-
-        <div class="col-md-12">
-            <div class="form-group">
-                <label asp-for="Produto.nome" class="control-label">Nome</label>
-                <input asp-for="Produto.nome" class="form-control" />
-            </div>
-        </div>
-
-        <div class="col-md-12">
-            <div class="form-group">
-                <label asp-for="Produto.modelo" class="control-label">modelo</label>
-                <input asp-for="Produto.modelo" class="form-control" />
-            </div>
-        </div>
-
-        <div class="col-md-12">
-            <div class="form-group">
-                <label asp-for="Produto.quantidade" class="control-label">quantidade</label>
-                <input asp-for="Produto.quantidade" class="form-control" />
-            </div>
-        </div>
-
-        <div class="col-md-12">
-            <div class="form-group">
-                <label asp-for="Produto.descricao" class="control-label">descricao</label>
-                <input asp-for="Produto.descricao" class="form-control" />
-            </div>
-        </div>
-
-        <div class="col-md-12">
-            <div class="form-group">
-                <label asp-for="Produto.tamanho" class="control-label">tamanho</label>
-                <input asp-for="Produto.tamanho" class="form-control" />
-            </div>
-        </div>
-
-        <div class="col-md-12">
-            <div class="form-group">
-                <label asp-for="Produto.preco" class="control-label">preco</label>
-                <input asp-for="Produto.preco" class="form-control" />
-            </div>
-        </div>
+<div class="container col-8">
+    <h4 class="text-center"> Atualizar Produto</h4>
+    <hr />
 
 
-        <div class="col-md-6">
-            <div class="form-group">
-                <label asp-for="Produto.imagem" class="control-label">Imagem</label>
-                <input asp-for="Produto.imagem" class="form-control" />
-            </div>
-        </div>
+    <div class="card shadow h-100 py-2">
+        <div class="card-body">
+
+            <form method="Post">
+                <div class="row my-2">
+                    <div class="col">
+                        <label asp-for="Produto.nome">Nome*</label>
+                        <input asp-for="Produto.nome" class="form-control" required/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Produto.modelo">Modelo*</label>
+                        <input asp-for="Produto.modelo" class="form-control" required/>
+                    </div>
+
+                    <div class="col">
+                        <label asp-for="Produto.quantidade">Quantidade*</label>
+                        <input asp-for="Produto.quantidade" class="form-control" required/>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Produto.Categoria.ID">Categoria*</label>
+                        <input asp-for="Produto.Categoria.ID" class="form-control" required/>
+                    </div>
+
+                        <div class="col">
+                            <label asp-for="Produto.tamanho">Tamanho*</label>
+                            <input asp-for="Produto.tamanho" class="form-control" required/>
+                        </div>
+                        </div>
+                <div class="row">
+                    <div class="col">
+                        <label asp-for="Produto.preco">Preço de Venda*</label>
+                        <input asp-for="Produto.preco" class="form-control" required/>
+                    </div>
+
+                    <div class="col">
+                        <label asp-for="Produto.imagem">Imagem*</label>
+                        <input asp-for="Produto.imagem" class="form-control" required/>
+                    </div>
+                </div>
+
+                <div class="row my-2">
+                    <div class="col">
+                        <label asp-for="Produto.descricao">Descrição*</label>
+                        <textarea asp-for="Produto.descricao" class="form-control" col="8" rows="4" required></textarea>
+
+                    </div>
+
+                </div>
+                <div class="d-flex flex-row-reverse">
+                    <button type="submit" class="btn btn-info">Atualizar</button>
+                </div>
+            </form>
+
     </div>
-    <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-primary" />
     </div>
-</form>
+
+</div>
