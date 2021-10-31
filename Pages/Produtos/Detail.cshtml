@@ -1,53 +1,53 @@
 ﻿@page
 @model ControleDeEstoque.Pages.Produtos.DetailModel
-@{
+@{ViewData["Title"] = "Detalhe";
 }
 
 <h1 class="text-center">Gerenciador de Estoque</h1>
 <hr />
 
-   <section >
-      <div bg-light">
+<section>
+    <div bg-light">
         <div class="container">
             <div class="row">
                 <hr />
                 <div class="produto-picture">
-                    <img src="@Html.DisplayFor(model => model.Produto.imagem)"/>
-                    </div>
-                    <div class="card-body">
+                    <img src="@Html.DisplayFor(model => model.Produto.imagem)" />
+                </div>
+                <div class="card-body">
 
-                        <form class="needs-validation" novalidate>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="nome"><strong>Produto: </strong>@Html.DisplayFor(model => Model.Produto.nome)</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="sobrenome"><strong>Código: </strong>@Html.DisplayFor(model => Model.Produto.ID)</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="primeiroNome"><strong>Tam: </strong>@Html.DisplayFor(model => Model.Produto.tamanho)</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="sobrenome"><strong>R$: </strong>@Html.DisplayFor(model => Model.Produto.preco)</label>
-                                </div>
-                                @*<div class="col-md-12">
+                    <form class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="nome"><strong>Produto: </strong>@Html.DisplayFor(model => Model.Produto.nome)</label>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="sobrenome"><strong>Código: </strong>@Html.DisplayFor(model => Model.Produto.ID)</label>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="primeiroNome"><strong>Tam: </strong>@Html.DisplayFor(model => Model.Produto.tamanho)</label>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="sobrenome"><strong>R$: </strong>@Html.DisplayFor(model => Model.Produto.preco)</label>
+                            </div>
+                            @*<div class="col-md-12">
                                     <label for="email"><strong>Categoria: @Html.DisplayFor(model => Model.Produto.Categoria.ID)</strong></label>
                                 </div>*@
-                                <div class="col-md-12">
-                                    <label for="email"><strong>Descrição: </strong>@Html.DisplayFor(model => Model.Produto.descricao)</label>
-</div>
-                            </div>
-                        </form>
-                        <div class="align-items-center">
-                            <div>
-                                <button type="button" class="w-100 btn btn-lg btn-primary">Destaque</button>
+                            <div class="col-md-12">
+                                <label for="email"><strong>Descrição: </strong>@Html.DisplayFor(model => Model.Produto.descricao)</label>
                             </div>
                         </div>
+                    </form>
+                    <div class="align-items-center">
+                        <div>
+                            <button type="button" class="w-100 btn btn-lg btn-primary">Destaque</button>
+                        </div>
                     </div>
-
                 </div>
+
             </div>
-</div>
+        </div>
+    </div>
 </section>
 <div class="row">
     <a class="btn btn-outline-primary"

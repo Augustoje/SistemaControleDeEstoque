@@ -1,6 +1,6 @@
 ﻿@page
 @model ControleDeEstoque.Pages.Produtos.DetailModel
-@{
+@{ViewData["Title"] = "Editar"; 
 }
 
 <div class="container col-8">
@@ -15,19 +15,19 @@
                 <div class="row my-2">
                     <div class="col">
                         <label asp-for="Produto.nome">Nome*</label>
-                        <input asp-for="Produto.nome" class="form-control" required/>
+                        <input asp-for="Produto.nome" class="form-control" required />
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col">
                         <label asp-for="Produto.modelo">Modelo*</label>
-                        <input asp-for="Produto.modelo" class="form-control" required/>
+                        <input asp-for="Produto.modelo" class="form-control" required />
                     </div>
 
                     <div class="col">
                         <label asp-for="Produto.quantidade">Quantidade*</label>
-                        <input asp-for="Produto.quantidade" class="form-control" required/>
+                        <input asp-for="Produto.quantidade" class="form-control" required />
 
                     </div>
                 </div>
@@ -35,23 +35,23 @@
                 <div class="row">
                     <div class="col">
                         <label asp-for="Produto.Categoria.ID">Categoria*</label>
-                        <input asp-for="Produto.Categoria.ID" class="form-control" required/>
+                        <input asp-for="Produto.Categoria.ID" class="form-control" required />
                     </div>
 
-                        <div class="col">
-                            <label asp-for="Produto.tamanho">Tamanho*</label>
-                            <input asp-for="Produto.tamanho" class="form-control" required/>
-                        </div>
-                        </div>
+                    <div class="col">
+                        <label asp-for="Produto.tamanho">Tamanho*</label>
+                        <input asp-for="Produto.tamanho" class="form-control" required />
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col">
                         <label asp-for="Produto.preco">Preço de Venda*</label>
-                        <input asp-for="Produto.preco" class="form-control" required/>
+                        <input asp-for="Produto.preco" class="form-control" required />
                     </div>
 
                     <div class="col">
                         <label asp-for="Produto.imagem">Imagem*</label>
-                        <input asp-for="Produto.imagem" class="form-control" required/>
+                        <input asp-for="Produto.imagem" class="form-control" required />
                     </div>
                 </div>
 
@@ -68,7 +68,7 @@
                 </div>
             </form>
 
-    </div>
+        </div>
     </div>
 
 </div>
