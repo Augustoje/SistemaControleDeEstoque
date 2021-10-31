@@ -123,12 +123,12 @@
                             <th scope="col">ID produto</th>
                         </tr>
                     </thead>
-                    @foreach (var data in Model.Produtos)
+                    @foreach (var data in Model.MaisVendidos)
                     {
                         <tbody>
                              <tr>
-                                <td> @Html.DisplayFor(modelItem => data.nome)</td>
-                                <td> @Html.DisplayFor(modelItem => data.ID)</td>
+                                <td> @Html.DisplayFor(modelItem => data.Produto.nome)</td>
+                                <td> @Html.DisplayFor(modelItem => data.Produto.ID)</td>
                              </tr>
 
                         </tbody>

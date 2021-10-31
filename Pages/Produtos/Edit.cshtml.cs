@@ -49,8 +49,7 @@ namespace ControleDeEstoque.Pages.Produtos
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = await client
-                    .PutAsJsonAsync("api/Produtos/" + Produto.ID, Produto);
+                HttpResponseMessage response = await client.PutAsJsonAsync("api/Produto/" + Produto.ID, Produto);
                 if(response.IsSuccessStatusCode)
                 {
                     return RedirectToPage("./Index");

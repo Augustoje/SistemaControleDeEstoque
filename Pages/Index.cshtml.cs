@@ -18,6 +18,8 @@ namespace ControleDeEstoque.Pages
         public List<Produto> Produtos { get; private set; }
         public List<Produto> MaisVenda { get; private set; }
         public List<Venda> UltimaSaida { get; private set; }
+
+        public List<Venda> MaisVendidos { get; private set; }
         public List<Venda> UltimasAtulizacoes { get; private set; }
         
         public int Estoque { get; private set; }
@@ -43,6 +45,7 @@ namespace ControleDeEstoque.Pages
                 await GetMaisVendido();
                 await GetUltimaSaida();
                 await GetUltimasAtulizacoes();
+                await GetMaisVendidos();
             }
         }
 
@@ -121,6 +124,26 @@ namespace ControleDeEstoque.Pages
             }
             
                 
+        }
+        public async Task GetMaisVendidos()
+        {
+            using (var client = new HttpClient())
+            {
+
+                client.BaseAddress = new Uri(baseUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(
+
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = await client.GetAsync("api/Venda");
+                if (response.IsSuccessStatusCode)
+                {
+                    string result = response.Content.ReadAsStringAsync().Result;
+                    MaisVendidos = JsonConvert.DeserializeObject<List<Venda>>(result);
+                }
+            }
+
+
         }
     }
 }
