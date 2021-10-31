@@ -31,7 +31,7 @@ namespace ControleDeEstoque.Pages.Vendas
                 if (response.IsSuccessStatusCode)
                 {
                     //Produtos/Index
-                    return RedirectToPage("./Index");
+                    return RedirectToPage("/Index");
                 } else
                 {
                     return RedirectToPage("./CreateVenda");
