@@ -91,9 +91,9 @@
                         <tbody>
                             <tr>
                                 <td> @Html.DisplayFor(modelItem => data.ID)</td>
-                                <td> @Html.DisplayFor(modelItem => data.nome)</td>
+                                <td> @Html.DisplayFor(modelItem => data.nomeCategoria)</td>
                                 <td> @Html.DisplayFor(modelItem => data.tamanho)</td>
-                                <td> @Html.DisplayFor(modelItem => data.Categoria.nomeCategoria)</td>
+                                <td> @Html.DisplayFor(modelItem => data.Categoria.nome)</td>
                             </tr>
                         </tbody>
                     }
@@ -113,15 +113,15 @@
                     <thead class="table table-borderless">
                         <tr>
                             <th scope="col">Produto</th>
-                            <th scope="col">Código</th>
+                            <th scope="col">Quantidade</th>
                         </tr>
                     </thead>
                     @foreach (var data in Model.Produtos)
                     {
                         <tbody>
                              <tr>
-                                <td> @Html.DisplayFor(modelItem => data.nome)</td>
-                                <td> @Html.DisplayFor(modelItem => data.ID)</td>
+                                <td> @Html.DisplayFor(modelItem => data.nomeCategoria)</td>
+                                <td> @Html.DisplayFor(modelItem => data.quantidade)</td>
                              </tr>
 
                         </tbody>

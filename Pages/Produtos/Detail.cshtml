@@ -15,7 +15,7 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="primeiroNome">Nome:</label>
-                                        <h6>@Html.DisplayFor(model => Model.Produto.nome)</h6>
+                                        <h6>@Html.DisplayFor(model => Model.Produto.nomeCategoria)</h6>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="sobrenome">ID:</label>
@@ -49,7 +49,7 @@
 <div class="row">
     <a class="btn btn-outline-primary"
        asp-page="/Produtos/Edit"
-       asp-route-id="@Model.Produto.ID">Atualizar</a>
+       asp-route-id="@Model.Produto.ID">Editar</a>
     <a class="btn btn-outline-danger"
        asp-page="/Produtos/Delete"
        asp-route-id="@Model.Produto.ID">Deletar</a>
