@@ -34,13 +34,10 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success mb-1">
-                                Última saída
+                                Total de peças Vendidas
                             </div>
                             <div class="h3 mb-0">
-                                @foreach (var data in Model.UltimaSaida)
-                                {
-                                <h5>@Html.DisplayFor(modelItem => data.Produto.nome)</h5>
-                                }
+                                <h5>@Html.DisplayFor(Model => Model.UltimaSaida)</h5>
                             </div>
                                 </div>
                         <div class="col-auto">
@@ -58,7 +55,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning mb-1">
-                                Peça mais vendida
+                                Melhor Venda
                             </div>
                             <div class="h3 mb-0">
                                 @foreach (var data in Model.MaisVenda)
@@ -81,7 +78,7 @@
     <div class="row justify-content-md-center">
         <div class="col">
 
-            <h3 class="mb-3 mt-4 ml-2"> Ultimas atualizações </h3>
+            <h3 class="mb-3 mt-4 ml-2">Ultimas Saídas</h3>
 
             <div class="rounded bg-white shadow-sm border">
                 <table class="table table-striped border-0">
@@ -89,9 +86,9 @@
                         <tr>
                             <th scope="col">Código</th>
                             <th scope="col">Produto</th>
-                            <th scope="col">Tamanho</th>
-                            <th scope="col">Modelo</th>
-                            <th scope="col">Data de Venda</th>
+                            <th scope="col">Tam</th>
+                            <th scope="col">Qtde</th>
+                            <th scope="col">Data</th>
                         </tr>
                     </thead>
                     @foreach (var data in Model.UltimasAtulizacoes)
@@ -101,7 +98,7 @@
                                 <td> @Html.DisplayFor(modelItem => data.ID)</td>
                                 <td> @Html.DisplayFor(modelItem => data.Produto.nome)</td>
                                 <td> @Html.DisplayFor(modelItem => data.Produto.tamanho)</td>
-                                <td> @Html.DisplayFor(modelItem => data.Produto.modelo)</td>
+                                <td> @Html.DisplayFor(modelItem => data.quantidade)</td>
                                 <td> @Html.DisplayFor(modelItem => data.data)</td>
                             </tr>
                         </tbody>
@@ -115,22 +112,24 @@
         <div class="col col-lg-4">
 
 
-            <h3 class="mb-3 mt-4 ml-2"> Mais Vendidos</h3>
+            <h3 class="mb-3 mt-4 ml-2">Ultimas Entradas</h3>
 
             <div class="rounded bg-white shadow-sm border">
                 <table class="table table-striped border-0">
                     <thead class="table table-borderless">
                         <tr>
+                            <th scope="col">ID</th>
                             <th scope="col">Produto</th>
-                            <th scope="col">Vendidos</th>
+                            <th scope="col">Qtde</th>
                         </tr>
                     </thead>
 
-                    @foreach (var data in Model.MaisVendidos)
+                    @foreach (var data in Model.Produtos)
                     {
                         <tbody>
                              <tr>
-                                <td> @Html.DisplayFor(modelItem => data.Produto.nome)</td>
+                                <td> @Html.DisplayFor(modelItem => data.ID)</td>
+                                <td> @Html.DisplayFor(modelItem => data.nome)</td>
                                 <td> @Html.DisplayFor(modelItem => data.quantidade)</td>
                              </tr>
 

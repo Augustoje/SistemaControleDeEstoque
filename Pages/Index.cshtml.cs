@@ -17,11 +17,11 @@ namespace ControleDeEstoque.Pages
     {
         public List<Produto> Produtos { get; private set; }
         public List<Produto> MaisVenda { get; private set; }
-        public List<Venda> UltimaSaida { get; private set; }
         public List<Venda> MaisVendidos { get; private set; }
         public List<Venda> UltimasAtulizacoes { get; private set; }
         
         public int Estoque { get; private set; }
+        public int UltimaSaida { get; private set; }
 
         string baseUrl = "https://localhost:44338";
         public async Task OnGetAsync()
@@ -99,7 +99,7 @@ namespace ControleDeEstoque.Pages
                 if (response.IsSuccessStatusCode)
                 {
                     string result = response.Content.ReadAsStringAsync().Result;
-                    UltimaSaida = JsonConvert.DeserializeObject<List<Venda>>(result);
+                    UltimaSaida = JsonConvert.DeserializeObject<int>(result);
                 }
             }
         }
