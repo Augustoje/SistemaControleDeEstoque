@@ -12,6 +12,7 @@
         <div class="card-body">
 
             <form method="Post">
+                <input type="hidden" asp-for="Produto.ID" />
                 <div class="row my-2">
                     <div class="col">
                         <label asp-for="Produto.nome">Nome*</label>
@@ -63,8 +64,10 @@
                     </div>
 
                 </div>
-                <div class="d-flex flex-row-reverse">
-                    <input type="submit" value="Edit" class="btn btn-primary">Atualizar/>
+                <div class="row">
+                    <div class="d-grid mx-auto">
+                        <button class="btn btn-info" type="submit">Adicionar</button>
+                    </div>
                 </div>
             </form>
 

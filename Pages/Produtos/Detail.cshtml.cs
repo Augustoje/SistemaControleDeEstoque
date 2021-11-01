@@ -17,7 +17,7 @@ namespace ControleDeEstoque.Pages.Produtos
         string baseUrl = "https://localhost:44338";
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -29,8 +29,8 @@ namespace ControleDeEstoque.Pages.Produtos
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = await client.GetAsync("api/Produto/" + id);
-                
-                if(response.IsSuccessStatusCode)
+
+                if (response.IsSuccessStatusCode)
                 {
                     string result = response.Content.ReadAsStringAsync().Result;
                     Produto = JsonConvert.DeserializeObject<Produto>(result);
@@ -39,5 +39,7 @@ namespace ControleDeEstoque.Pages.Produtos
 
             return Page();
         }
+
     }
 }
+

@@ -18,7 +18,6 @@ namespace ControleDeEstoque.Pages
         public List<Produto> Produtos { get; private set; }
         public List<Produto> MaisVenda { get; private set; }
         public List<Venda> UltimaSaida { get; private set; }
-
         public List<Venda> MaisVendidos { get; private set; }
         public List<Venda> UltimasAtulizacoes { get; private set; }
         

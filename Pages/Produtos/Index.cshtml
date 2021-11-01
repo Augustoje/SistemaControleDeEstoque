@@ -22,17 +22,16 @@
                                 <form class="needs-validation" novalidate>
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
-                                            <label>Nome: @Html.DisplayFor(modelItem => data.nome)</label>
+                                            <label>@Html.DisplayFor(modelItem => data.nome)</label>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label>Modelo: @Html.DisplayFor(modelItem => data.modelo)</label>
+                                            <label>Código: @Html.DisplayFor(modelItem => data.ID)</label>
                                         </div>
-
                                         <div class="col-md-6 mb-3">
                                             <label>Tamanho: @Html.DisplayFor(modelItem => data.tamanho)</label>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label>Preço: @Html.DisplayFor(modelItem => data.preco) R$</label>
+                                            <label>R$ @Html.DisplayFor(modelItem => data.preco) </label>
                                         </div>
                                         <div class="col-md-12">
                                             <label>Categoria: @Html.DisplayFor(modelItem => data.Categoria.nomeCategoria)</label>
