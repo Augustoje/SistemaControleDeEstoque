@@ -191,4 +191,8 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Validacao\" />
+  </ItemGroup>
+
 </Project>
