@@ -1,6 +1,6 @@
 ﻿@page
 @model ControleDeEstoque.Pages.Produtos.EditModel
-@{ViewData["Title"] = "Editar"; 
+@{ViewData["Title"] = "Editar";
 }
 
 <div class="container col-8">
@@ -16,14 +16,14 @@
                 <div class="row my-2">
                     <div class="col">
                         <label asp-for="Produto.nome">Nome*</label>
-                        <input placeholder="Descrição do produto" asp-for="Produto.nome" class="form-control" required />
+                        <input placeholder="Descrição do produto" asp-for="Produto.nome" class="form-control" maxlength="12" required  />
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col">
                         <label asp-for="Produto.modelo">Modelo*</label>
-                        <input placeholder="Modelo do produto" asp-for="Produto.modelo" class="form-control" required />
+                        <input placeholder="Modelo do produto" asp-for="Produto.modelo" class="form-control"maxlength="12" required />
                     </div>
 
                     <div class="col">
@@ -32,27 +32,32 @@
 
                     </div>
                 </div>
-
                 <div class="row">
-                    <div class="col">
-                        <label asp-for="Produto.Categoria.ID">Categoria*</label>
-                        <input placeholder="Categoria do produto" asp-for="Produto.Categoria.ID" class="form-control" required />
-                    </div>
-
                     <div class="col">
                         <label asp-for="Produto.tamanho">Tamanho*</label>
                         <input placeholder="Tamanho do produto" asp-for="Produto.tamanho" class="form-control" required />
                     </div>
-                </div>
-                <div class="row">
                     <div class="col">
                         <label asp-for="Produto.preco">Preço de Venda*</label>
                         <input placeholder="Preço unitário do produto" asp-for="Produto.preco" class="form-control" required />
                     </div>
-
+                </div>
+                <div class="row">
                     <div class="col">
                         <label asp-for="Produto.imagem">Imagem*</label>
                         <input placeholder="Imagem do produto" asp-for="Produto.imagem" class="form-control" required />
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label asp-for="Produto.Categoria.ID">Categoria*</label>
+                        </div>
+                        <select asp-for="Produto.Categoria.ID" required>
+                            <option value="deafault">Escolha uma Categoria</option>
+                            <option value="1">Masculino</option>
+                            <option value="2">Feminino</option>
+                            <option value="3">Infantil</option>
+                            <option value="4">Outros</option>
+                        </select>
                     </div>
                 </div>
 

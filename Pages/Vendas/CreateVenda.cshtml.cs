@@ -34,7 +34,7 @@ namespace ControleDeEstoque.Pages.Vendas
                     return RedirectToPage("/Index");
                 } else
                 {
-                    return RedirectToPage("./CreateVenda");
+                    return NotFound();
                 }
             }
         }
