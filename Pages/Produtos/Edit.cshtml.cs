@@ -45,11 +45,12 @@ namespace ControleDeEstoque.Pages.Produtos
         {
             using (var client = new HttpClient())
             {
+                Produto.ativo = true;
                 client.BaseAddress = new Uri(baseUrl);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = await client.PutAsJsonAsync("api/Produto/" + Produto.ID, Produto);
+                HttpResponseMessage response = await client.PutAsJsonAsync("api/Produto", Produto);
                 if(response.IsSuccessStatusCode)
                 {
                     return RedirectToPage("./Index");

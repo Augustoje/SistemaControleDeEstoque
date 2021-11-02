@@ -15,6 +15,7 @@ namespace ControleDeEstoque.Models
         public string tamanho { get; set; }
         public double preco { get; set; }
         public string imagem { get; set; }
+        public bool ativo { get; set; }
         public Categoria Categoria { get; set; }
     }
 }

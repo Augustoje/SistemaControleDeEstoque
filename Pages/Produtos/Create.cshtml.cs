@@ -22,6 +22,7 @@ namespace ControleDeEstoque.Pages.Produtos
         {
             using(var client = new HttpClient())
             {
+                Produto.ativo = true;
                 client.BaseAddress = new Uri(baseUrl);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(

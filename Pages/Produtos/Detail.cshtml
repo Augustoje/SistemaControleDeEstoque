@@ -47,8 +47,10 @@
         <div class="col col-lg-4">
             <div class="card shadow-sm h-60 py-2">
                 <div class="card-body h-25">
-                    <img src="@Html.DisplayFor(model => model.Produto.imagem)"
+                    <div class="imgControle">
+                         <img src="@Html.DisplayFor(model => model.Produto.imagem)"
                          class="img-fluid rounded" alt="Imagem responsiva" height="50">
+                        </div>
                 </div>
             </div>
         </div>
