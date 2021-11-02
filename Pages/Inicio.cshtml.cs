@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using ControleDeEstoque.Pages;
 
 namespace ControleDeEstoque.Pages
 {
@@ -19,6 +20,9 @@ namespace ControleDeEstoque.Pages
         public List<Produto> MaisVenda { get; private set; }
         public List<Venda> MaisVendidos { get; private set; }
         public List<Venda> UltimasAtulizacoes { get; private set; }
+
+        [BindProperty]
+        public string Usuario { get; set; }
         
         public int Estoque { get; private set; }
         public int UltimaSaida { get; private set; }
@@ -28,6 +32,7 @@ namespace ControleDeEstoque.Pages
         {
             using (var client = new HttpClient())
             {
+
                 client.BaseAddress = new Uri(baseUrl);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(

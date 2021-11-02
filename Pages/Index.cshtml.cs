@@ -11,10 +11,9 @@ namespace ControleDeEstoque.Pages.Validacao
         public string Senha { get; set; }
         public ActionResult OnPostAsync()
         {
-            string userPadrao = "admin";
             string senhaPadrao = "pass123";
 
-            if (Senha.Equals(senhaPadrao) && Usuario.Equals(userPadrao))
+            if (Senha.Equals(senhaPadrao))
             {
                 return RedirectToPage("./Inicio");
             }
