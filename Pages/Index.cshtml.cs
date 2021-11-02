@@ -16,11 +16,11 @@ namespace ControleDeEstoque.Pages.Validacao
 
             if (Senha.Equals(senhaPadrao) && Usuario.Equals(userPadrao))
             {
-                return RedirectToPage("/Produtos/Index");
+                return RedirectToPage("./Inicio");
             }
             else
             {
-                return RedirectToPage("/Index");
+                return RedirectToPage("./Index");
             }
 
         }
