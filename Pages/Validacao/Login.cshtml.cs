@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ControleDeEstoque.Pages
+namespace ControleDeEstoque.Pages.Validacao
 {
     public class LoginModel : PageModel
     {
@@ -14,16 +14,15 @@ namespace ControleDeEstoque.Pages
             string userPadrao = "admin";
             string senhaPadrao = "pass123";
 
-            if (Senha.Equals(senhaPadrao)&& Usuario.Equals(userPadrao))
-                {
-                    //Produtos/Index
-                    return RedirectToPage("/Produtos/Index");
-                }
-                else
-                {
-                    return RedirectToPage("/Login");
-                }
-            
+            if (Senha.Equals(senhaPadrao) && Usuario.Equals(userPadrao))
+            {
+                return RedirectToPage("/Produtos/Index");
+            }
+            else
+            {
+                return RedirectToPage("Validacao/Login");
+            }
+
         }
     }
 }
