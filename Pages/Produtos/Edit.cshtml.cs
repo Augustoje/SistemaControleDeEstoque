@@ -54,7 +54,7 @@ namespace ControleDeEstoque.Pages.Produtos
                     return RedirectToPage("./Index");
                 } else
                 {
-                    return RedirectToPage("/ErroID/ErroID");
+                    return Page();
                 }
             }
         }

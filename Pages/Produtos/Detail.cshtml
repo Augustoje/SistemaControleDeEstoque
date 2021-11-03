@@ -16,7 +16,7 @@
                     <div class="d-flex justify-content-md-between pb-3">
                         <p class="text-secondary font-weight-bold">
                             <span>
-                                Nome: @Html.DisplayFor(model => Model.Produto.nome)
+                                Modelo: @Html.DisplayFor(model => Model.Produto.modelo)
                             </span>
                         </p>
                         <p class="text-secondary font-weight-bold">
@@ -25,7 +25,7 @@
                             </span>
                         </p>
                     </div>
-                    <h2 class="pb-3">@Html.DisplayFor(model => Model.Produto.modelo)</h2>
+                    <h2 class="pb-3">@Html.DisplayFor(model => Model.Produto.nome)</h2>
                     <div class="d-flex justify-content-md-between pb-3">
                         <p class="text-secondary font-weight-bold">
                             <span> Tam: @Html.DisplayFor(model => Model.Produto.tamanho) </span>
@@ -39,11 +39,11 @@
                     <div class="d-flex justify-content-md-between pb-sm-3">
                         <p class="text-secondary font-weight-bold">
                             Categoria:<span class="text-dark font-weight-normal">
-                                @Html.DisplayFor(model => Model.Produto.Categoria.ID)
+                                @Html.DisplayFor(model => Model.Produto.Categoria.nomeCategoria)
                             </span>
                         </p>
                         <p class="text-secondary font-weight-bold">
-                            QTD: <span class="text-dark">
+                            Qtde: <span class="text-dark">
                                 @Html.DisplayFor(model => Model.Produto.quantidade)
                             </span>
                         </p>
