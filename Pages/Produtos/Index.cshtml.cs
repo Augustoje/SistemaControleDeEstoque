@@ -1,15 +1,11 @@
+using ControleDeEstoque.Models;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using ControleDeEstoque.Models;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using Newtonsoft.Json;
-using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using System.Threading.Tasks;
 
 namespace ControleDeEstoque.Pages.Produtos
 {
@@ -33,8 +29,6 @@ namespace ControleDeEstoque.Pages.Produtos
                     Produtos = JsonConvert.DeserializeObject<List<Produto>>(result);
                 }
             }
-
-            
         }
     }
 }

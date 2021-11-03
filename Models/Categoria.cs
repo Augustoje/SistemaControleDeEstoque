@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-namespace ControleDeEstoque.Models
-  
+﻿namespace ControleDeEstoque.Models
+
 {
     public class Categoria
     {

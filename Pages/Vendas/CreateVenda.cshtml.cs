@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using ControleDeEstoque.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ControleDeEstoque.Models;
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace ControleDeEstoque.Pages.Vendas
 {
@@ -31,10 +28,10 @@ namespace ControleDeEstoque.Pages.Vendas
                 if (response.IsSuccessStatusCode)
                 {
                     //Produtos/Index
-                    return RedirectToPage("/Index");
+                    return RedirectToPage("/Inicio");
                 } else
                 {
-                    return NotFound();
+                    return RedirectToPage("/ErroID/ErroID");
                 }
             }
         }

@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using ControleDeEstoque.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ControleDeEstoque.Models;
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace ControleDeEstoque.Pages.Produtos
 {
@@ -16,11 +13,12 @@ namespace ControleDeEstoque.Pages.Produtos
         [BindProperty]
         public Produto Produto { get; set; }
 
-
         string baseUrl = "https://localhost:44338";
+
+        // Metodo Post para criar Produto
         public async Task<IActionResult> OnPostAsync()
         {
-            using(var client = new HttpClient())
+            using (var client = new HttpClient())
             {
                 Produto.ativo = true;
                 client.BaseAddress = new Uri(baseUrl);
@@ -29,13 +27,14 @@ namespace ControleDeEstoque.Pages.Produtos
                     new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = await client
                     .PostAsJsonAsync("api/Produto", Produto);
-                
-                if(response.IsSuccessStatusCode)
+
+                if (response.IsSuccessStatusCode)
                 {
                     //Produtos/Index
-                    return RedirectToPage("./Index");
-                } else {
-                    return RedirectToPage("./Create");
+                    return RedirectToPage("/Inicio");
+                } else
+                {
+                    return RedirectToPage("/ErroID/ErroID");
                 }
             }
         }

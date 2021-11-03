@@ -1,13 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using ControleDeEstoque.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ControleDeEstoque.Models;
+using Newtonsoft.Json;
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace ControleDeEstoque.Pages.Produtos
 {
@@ -20,7 +18,7 @@ namespace ControleDeEstoque.Pages.Produtos
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToPage("/ErroID/ErroID");
             }
 
             using (var client = new HttpClient())
@@ -51,12 +49,12 @@ namespace ControleDeEstoque.Pages.Produtos
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = await client.PutAsJsonAsync("api/Produto", Produto);
-                if(response.IsSuccessStatusCode)
+                if (response.IsSuccessStatusCode)
                 {
                     return RedirectToPage("./Index");
                 } else
                 {
-                    return Page();
+                    return RedirectToPage("/ErroID/ErroID");
                 }
             }
         }

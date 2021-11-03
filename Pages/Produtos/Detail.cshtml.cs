@@ -17,7 +17,7 @@ namespace ControleDeEstoque.Pages.Produtos
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToPage("/ErroID/ErroID");
             }
 
             using (var client = new HttpClient())

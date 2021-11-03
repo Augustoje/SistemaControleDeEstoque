@@ -1,16 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ControleDeEstoque.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ControleDeEstoque.Models;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using Newtonsoft.Json;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using ControleDeEstoque.Pages;
+using System.Threading.Tasks;
 
 namespace ControleDeEstoque.Pages
 {
@@ -23,7 +19,7 @@ namespace ControleDeEstoque.Pages
 
         [BindProperty]
         public string Usuario { get; set; }
-        
+
         public int Estoque { get; private set; }
         public int UltimaSaida { get; private set; }
 
@@ -32,7 +28,6 @@ namespace ControleDeEstoque.Pages
         {
             using (var client = new HttpClient())
             {
-
                 client.BaseAddress = new Uri(baseUrl);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(
@@ -73,7 +68,8 @@ namespace ControleDeEstoque.Pages
 
         public async Task GetMaisVendido()
         {
-            using (var client = new HttpClient()) { 
+            using (var client = new HttpClient())
+            {
 
                 client.BaseAddress = new Uri(baseUrl);
                 client.DefaultRequestHeaders.Clear();
@@ -87,7 +83,7 @@ namespace ControleDeEstoque.Pages
                     string result = response.Content.ReadAsStringAsync().Result;
                     MaisVenda = JsonConvert.DeserializeObject<List<Produto>>(result);
                 }
-             }
+            }
         }
 
         public async Task GetUltimaSaida()
@@ -126,8 +122,6 @@ namespace ControleDeEstoque.Pages
                     UltimasAtulizacoes = JsonConvert.DeserializeObject<List<Venda>>(result);
                 }
             }
-            
-                
         }
         public async Task GetMaisVendidos()
         {
@@ -146,8 +140,6 @@ namespace ControleDeEstoque.Pages
                     MaisVendidos = JsonConvert.DeserializeObject<List<Venda>>(result);
                 }
             }
-
-
         }
     }
 }
